@@ -1,7 +1,33 @@
 {
   "name": "the3.opened.bible",
   "version": "1.0.0",
-  "description": "Website for the.opened.bible",
-  "repository": "https://github.com/arneau/the3.opened.bible.git",
-  "license": "MIT"
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "connected-react-router": "^4.1.0",
+    "css-loader": "^0.28.0",
+    "node-sass": "^4.5.2",
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.4.0",
+    "redux-devtools-dock-monitor": "^1.1.2",
+    "redux-devtools-log-monitor": "^1.3.0",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "scripts": {
+    "build": "webpack -p",
+    "dev": "webpack-dev-server"
+  }
 }
