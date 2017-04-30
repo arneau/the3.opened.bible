@@ -14,11 +14,7 @@ export default (
   <Provider store={Store}>
     <ConnectedRouter history={History}>
       <AppContainer>
-        <div>
-          <Link to="/">Home</Link>
-          <Link to="/read">Read</Link>
-        </div>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={ReadPage} />
         <Route path="/read" component={ReadPage} />
       </AppContainer>
     </ConnectedRouter>

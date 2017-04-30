@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 import { DevTools } from '../tools'
 
+import styles from './app.scss'
+
 class AppComponent extends React.Component {
 
   static childContextTypes = {
@@ -23,7 +25,7 @@ class AppComponent extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.app}>
         <main>
           {this.props.children}
         </main>

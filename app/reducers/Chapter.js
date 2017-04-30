@@ -7,7 +7,7 @@ const ChapterReducer = (state = initialState, action) => {
     case HYDRATE_STATE:
       return {
         ...state,
-        ...action.payload.Chapters
+        ...action.payload.entities.Chapters
       }
     default:
       return state

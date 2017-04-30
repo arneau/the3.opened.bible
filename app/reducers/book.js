@@ -7,7 +7,7 @@ const BookReducer = (state = initialState, action) => {
     case HYDRATE_STATE:
       return {
         ...state,
-        ...action.payload.Books
+        ...action.payload.entities.Books
       }
     default:
       return state

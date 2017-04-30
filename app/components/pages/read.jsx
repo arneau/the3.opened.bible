@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 import { VerseActions } from '../../actions'
 
+import Verse from '../elements/verse.jsx'
+
 class ReadPage extends React.Component {
 
   static contextTypes = {
@@ -16,11 +18,20 @@ class ReadPage extends React.Component {
   }
 
   render () {
+    let state = this.context.state, ids = Object.keys(state.entities.verses)
     return (
       <div>
-        <p>This is the read page :)</p>
         <input ref="input" type="text" />
         <button onClick={this.getPassage}>Go!</button>
+        <div>
+          {
+            ids.map((id) => {
+              return (
+                <Verse key={id} id={id} />
+              )
+            })
+          }
+        </div>
       </div>
     )
   }

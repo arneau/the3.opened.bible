@@ -7,7 +7,7 @@ const VerseTranslationReducer = (state = initialState, action) => {
     case HYDRATE_STATE:
       return {
         ...state,
-        ...action.payload.VerseTranslations
+        ...action.payload.entities.VerseTranslations
       }
     default:
       return state

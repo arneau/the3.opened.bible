@@ -17,7 +17,7 @@ const queryGraphQL = (query, variables) => {
     })
   })
   .then((response) => response.json())
-  .then((json) => normalize(json.data, QuerySchema).entities)
+  .then((json) => normalize(json.data, QuerySchema))
 }
 
 export {
