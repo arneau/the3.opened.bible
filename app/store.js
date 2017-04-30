@@ -1,19 +1,12 @@
-import { applyMiddleware, compose, createStore } from 'redux'
-import { connectRouter, routerMiddleware } from 'connected-react-router'
+import { createStore } from 'redux'
 
-import History from './history'
 import Reducers from './reducers'
-import { DevToolsEnhancer } from './tools'
+import Enhancers from './enhancers'
 
 const Store = createStore(
-  connectRouter(History)(Reducers),
+  Reducers,
   {},
-  compose(
-    applyMiddleware(
-      routerMiddleware(history)
-    ),
-    DevToolsEnhancer
-  )
+  Enhancers
 )
 
 export default Store
