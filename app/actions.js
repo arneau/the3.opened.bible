@@ -1,5 +1,5 @@
-import { fetchPassage } from './actions/passage'
+import * as VerseActions from './actions/Verse'
 
 export {
-  fetchPassage
+  VerseActions
 }

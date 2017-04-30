@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { fetchPassage } from '../../actions'
+import { VerseActions } from '../../actions'
 
 class ReadPage extends React.Component {
 
@@ -12,8 +12,7 @@ class ReadPage extends React.Component {
 
   getPassage = () => {
     let dispatch = this.context.dispatch
-    dispatch(fetchPassage(this.refs.input.value))
-    // fetchPassage(this.refs.input.value)
+    dispatch(VerseActions.fetchAllByReference(this.refs.input.value))
   }
 
   render () {

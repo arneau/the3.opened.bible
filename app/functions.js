@@ -3,21 +3,7 @@ import {
   schema
 } from 'normalizr'
 
-const BookSchema = new schema.Entity('Books')
-
-const ChapterSchema = new schema.Entity('Chapters')
-
-const VerseTranslationSchema = new schema.Entity('VerseTranslations')
-
-const VerseSchema = new schema.Entity('Verses', {
-  VerseTranslations: [VerseTranslationSchema]
-})
-
-const PassageSchema = new schema.Entity('Passage', {
-  Book: BookSchema,
-  Chapter: ChapterSchema,
-  Verses: [VerseSchema]
-})
+import QuerySchema from './schema'
 
 const queryGraphQL = (query, variables) => {
   return fetch('http://localhost:4000/graphql/', {
@@ -31,7 +17,7 @@ const queryGraphQL = (query, variables) => {
     })
   })
   .then((response) => response.json())
-  .then((json) => normalize(json.data.Passage, PassageSchema).entities)
+  .then((json) => normalize(json.data, QuerySchema).entities)
 }
 
 export {

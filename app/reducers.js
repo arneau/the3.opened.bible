@@ -7,11 +7,13 @@ import VerseReducer from './reducers/Verse'
 import VerseTranslationReducer from './reducers/VerseTranslation'
 
 const Reducers = combineReducers({
-  Books: BookReducer,
-  Chapters: ChapterReducer,
-  Verses: VerseReducer,
-  VerseTranslations: VerseTranslationReducer,
-  Router: RouterReducer
+  entities: combineReducers({
+    books: BookReducer,
+    chapters: ChapterReducer,
+    verses: VerseReducer,
+    verseTranslations: VerseTranslationReducer,
+  }),
+  router: RouterReducer
 })
 
 export default Reducers

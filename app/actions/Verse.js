@@ -2,37 +2,23 @@ import { queryGraphQL } from '../functions'
 
 import { HYDRATE_STATE } from '../types'
 
-const loadPassage = (reference) => {
-  dispatch(fetchDatasByIds(reference))
-  // return (dispatch, getState) => {
-  //   let idsToFetch = getDatasIdsToFetch(getState(), idsToLoad)
-  //   if (idsToFetch.length) {
-  //     return dispatch(fetchDatasByIds(idsToFetch))
-  //   } else {
-  //     return Promise.resolve()
-  //   }
-  // }
-}
-
-const fetchPassage = (reference) => {
+const fetchAllByReference = (reference) => {
   let query = `
     query ($reference: String!) {
-      Passage(reference: $reference) {
-        Book {
-          id
-          name
-        }
+      Verses(reference: $reference) {
+        id
         Chapter {
           id
+          Book {
+            id
+            name
+          }
           number
         }
-        Verses {
+        number
+        VerseTranslations {
           id
-          number
-          VerseTranslations {
-            id
-            text
-          }
+          text
         }
       }
     }
@@ -75,5 +61,5 @@ function fetchDatasByIds (ids) {
 }
 
 export {
-  fetchPassage
+  fetchAllByReference
 }
