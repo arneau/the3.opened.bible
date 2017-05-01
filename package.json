@@ -8,6 +8,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.0",
+    "isomorphic-fetch": "^2.2.1",
     "node-sass": "^4.5.2",
     "normalizr": "^3.2.2",
     "prop-types": "^15.5.8",
@@ -30,6 +31,6 @@
   },
   "scripts": {
     "build": "webpack -p",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server --host 192.168.1.105"
   }
 }

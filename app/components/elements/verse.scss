@@ -1,13 +1,35 @@
+@import '../../styles/config';
+@import '../../styles/extends';
+
 :local {
 
 	.verse {
+		color: rgba(0, 0, 0, 0.6);
 		float: left;
 		font-family: Georgia, serif;
-		padding: 1em;
+		padding: 1rem;
 		width: 100%;
 
+		@extend .unselectable;
+
+		&[data-selected=true] {
+			background-color: $medium_blue;
+			color: rgba(255, 255, 255, 0.7);
+
+			q {
+				color: rgba(255, 255, 255, 1);
+			}
+		}
+
 		q {
-			color: #c00;
+			color: rgba(0, 0, 0, 1);
+
+			&:before {
+				content: "";
+			}
+			&:after {
+				content: "";
+			}
 		}
 	}
 

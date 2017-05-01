@@ -1,3 +1,4 @@
+import 'isomorphic-fetch'
 import {
   normalize,
   schema
@@ -6,7 +7,7 @@ import {
 import QuerySchema from './schema'
 
 const queryGraphQL = (query, variables) => {
-  return fetch('http://localhost:4000/graphql/', {
+  return fetch('http://192.168.1.105:4000/graphql/', {
     method: 'post',
     headers: {
       'Content-Type': 'application/json'

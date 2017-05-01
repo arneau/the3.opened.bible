@@ -12,6 +12,11 @@ class ReadPage extends React.Component {
     state: PropTypes.object
   }
 
+  componentWillMount = () => {
+    let dispatch = this.context.dispatch
+    dispatch(VerseActions.fetchAllByReference('John 3'))
+  }
+
   getPassage = () => {
     let dispatch = this.context.dispatch
     dispatch(VerseActions.fetchAllByReference(this.refs.input.value))
