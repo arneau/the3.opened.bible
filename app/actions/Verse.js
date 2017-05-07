@@ -1,6 +1,9 @@
 import { queryGraphQL } from '../functions'
 
-import { HYDRATE_STATE } from '../types'
+import {
+  HYDRATE_STATE,
+  STORE_FOUND_VERSES
+} from '../types'
 
 const fetchAllByReference = (reference) => {
   let query = `
@@ -31,6 +34,10 @@ const fetchAllByReference = (reference) => {
     .then((payload) => {
       dispatch({
         type: HYDRATE_STATE,
+        payload: payload
+      })
+      dispatch({
+        type: STORE_FOUND_VERSES,
         payload: payload
       })
     })

@@ -4,31 +4,49 @@
 :local {
 
 	.verse {
-		color: rgba(0, 0, 0, 0.6);
+		display: flex;
 		float: left;
 		font-family: Georgia, serif;
 		padding: 1rem;
+		position: relative;
 		width: 100%;
 
 		@extend .unselectable;
 
-		&[data-selected=true] {
+		&[data-is-selected=true] {
 			background-color: $medium_blue;
-			color: rgba(255, 255, 255, 0.7);
+			color: #fff;
 
-			q {
+			sup {
+				color: rgba(255, 255, 255, 0.5);
+			}
+			p {
 				color: rgba(255, 255, 255, 1);
+
+				q {
+					color: inherit;
+				}
 			}
 		}
 
-		q {
-			color: rgba(0, 0, 0, 1);
+		sup {
+			color: rgba(0, 0, 0, 0.38);
+			flex: 0 0 auto;
+			padding-right: 1rem;
+		}
+		p {
+			color: rgba(0, 0, 0, 0.87);
+			flex: 1 1 auto;
 
-			&:before {
-				content: "";
-			}
-			&:after {
-				content: "";
+			q {
+				color: $red;
+
+				&::before {
+					content: "";
+				}
+				&::after {
+					content: "";
+				}
 			}
 		}
 	}

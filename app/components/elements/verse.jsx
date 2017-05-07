@@ -1,38 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { TOGGLE_VERSE_SELECTION } from '../../types'
+
 import styles from './verse.scss'
 
 class Verse extends React.Component {
 
   static contextTypes = {
+    dispatch: PropTypes.func,
     state: PropTypes.object
   }
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      isSelected: false
-    }
-  }
-
-  toggleSelected = () => {
-    this.setState({
-      isSelected: !this.state.isSelected
+  toggleVerseSelection = (id) => {
+    let dispatch = this.context.dispatch
+    dispatch({
+      type: TOGGLE_VERSE_SELECTION,
+      verse_id: id
     })
   }
 
   render () {
-    let state = this.context.state, id = this.props.id, selected = this.state.isSelected
+    let state = this.context.state, id = this.props.id
+    let isSelected = false
+    if (state.pages.read.verses.selected.indexOf(id) !== -1) {
+      isSelected = true
+    }
     let { number } = state.entities.verses[id]
     let { text } = state.entities.verseTranslations[id]
     return (
-      <div className={styles.verse} data-selected={selected} onClick={this.toggleSelected}>
-        <p>
-          <sup>{number} {selected}</sup>
-          &nbsp;
-          <span dangerouslySetInnerHTML={{__html: text}} />
-        </p>
+      <div className={styles.verse} data-is-selected={isSelected} onClick={() => this.toggleVerseSelection(id)}>
+        <sup>{number}</sup>
+        <p dangerouslySetInnerHTML={{__html: text}} />
       </div>
     )
   }

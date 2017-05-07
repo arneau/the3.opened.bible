@@ -5,6 +5,8 @@ import { VerseActions } from '../../actions'
 
 import Verse from '../elements/verse.jsx'
 
+import styles from './read.scss'
+
 class ReadPage extends React.Component {
 
   static contextTypes = {
@@ -23,7 +25,7 @@ class ReadPage extends React.Component {
   }
 
   render () {
-    let state = this.context.state, ids = Object.keys(state.entities.verses)
+    let state = this.context.state, ids = state.pages.read.verses.found
     return (
       <div>
         <input ref="input" type="text" />
@@ -35,6 +37,13 @@ class ReadPage extends React.Component {
                 <Verse key={id} id={id} />
               )
             })
+          }
+        </div>
+        <div>
+          {state.pages.read.verses.selected.length &&
+            <button className={styles.link_button}>
+              <i className="material-icons">create</i>
+            </button>
           }
         </div>
       </div>
