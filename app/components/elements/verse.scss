@@ -3,24 +3,20 @@
 
 :local {
 
-	.verse {
+	.container {
 		display: flex;
-		float: left;
-		font-family: Georgia, serif;
-		padding: 1rem;
-		position: relative;
 		width: 100%;
 
 		@extend .unselectable;
 
-		&[data-is-selected=true] {
-			background-color: $medium_blue;
-			color: #fff;
+		&.selected {
+			background-color: $blue;
+			color: rgba(255, 255, 255, 1);
 
-			sup {
+			.number {
 				color: rgba(255, 255, 255, 0.5);
 			}
-			p {
+			.text {
 				color: rgba(255, 255, 255, 1);
 
 				q {
@@ -28,23 +24,31 @@
 				}
 			}
 		}
+		&.rounded_top {
+			border-top-left-radius: $radius;
+			border-top-right-radius: $radius;
+		}
+		&.rounded_bottom {
+			border-bottom-left-radius: $radius;
+			border-bottom-right-radius: $radius;
+		}
 
-		sup {
+		.number {
 			color: rgba(0, 0, 0, 0.38);
 			flex: 0 0 auto;
-			padding-right: 1rem;
+			font-family: Georgia, serif;
+			padding: 1rem;
 		}
-		p {
+		.text {
 			color: rgba(0, 0, 0, 0.87);
 			flex: 1 1 auto;
+			font-family: Georgia, serif;
+			padding: 1rem 1rem 1rem 0;
 
 			q {
 				color: $red;
 
-				&::before {
-					content: "";
-				}
-				&::after {
+				&::before, &::after {
 					content: "";
 				}
 			}

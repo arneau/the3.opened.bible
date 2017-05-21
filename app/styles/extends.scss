@@ -1,5 +1,11 @@
 :local {
 
+	.round {
+		border-radius: 50%;
+	}
+	.rounded {
+		border-radius: $radius;
+	}
 	.unselectable {
 		-moz-user-select: none;
 		-ms-user-select: none;

@@ -1,0 +1,31 @@
+@import '../../../styles/config';
+@import '../../../styles/extends';
+
+:local {
+
+	.container {
+		background: #fff;
+		left: 0;
+		padding: 1rem;
+		position: fixed;
+		top: 0;
+		width: 100%;
+
+		&.with_shadow {
+			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+		}
+
+		input[type=text] {
+			background-color: $grey;
+			border: none;
+			color: rgba(0, 0, 0, 0.87);
+			font-family: Helvetica, sans-serif;
+			font-size: 1rem;
+			padding: 1rem;
+			width: 100%;
+
+			@extend .rounded;
+		}
+	}
+
+}

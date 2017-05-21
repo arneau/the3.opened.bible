@@ -1,19 +1,27 @@
 @import '../../styles/config';
+@import '../../styles/extends';
 
 :local {
 
+	.container {
+
+		article {
+			margin-top: calc(4rem + 1px);
+			padding: 1rem;
+		}
+	}
 	.link_button {
-		background-color: $medium_blue;
+		background-color: $blue;
 		border: none;
 		border-radius: 50%;
 		bottom: 1rem;
-		box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
 		cursor: pointer;
-		//height: 50px;
 		padding: 1rem;
 		position: fixed;
 		right: 1rem;
-		//width: 50px;
+
+		@extend .round;
 
 		i {
 			color: rgba(255, 255, 255, 1);
