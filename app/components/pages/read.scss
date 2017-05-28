@@ -6,25 +6,8 @@
 	.container {
 
 		article {
-			margin-top: calc(4rem + 1px);
+			margin-top: 4rem;
 			padding: 1rem;
-		}
-	}
-	.link_button {
-		background-color: $blue;
-		border: none;
-		border-radius: 50%;
-		bottom: 1rem;
-		box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
-		cursor: pointer;
-		padding: 1rem;
-		position: fixed;
-		right: 1rem;
-
-		@extend .round;
-
-		i {
-			color: rgba(255, 255, 255, 1);
 		}
 	}
 

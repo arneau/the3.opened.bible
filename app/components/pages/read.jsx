@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import HeaderComponent from './read/header.jsx'
 import VerseComponent from '../elements/verse.jsx'
-
+import FooterComponent from './read/footer.jsx'
 import styles from './read.scss'
 
 class ReadPage extends React.Component {
@@ -26,13 +26,7 @@ class ReadPage extends React.Component {
             })
           }
         </article>
-        <div>
-          {state.pages.read.verses.selected.length > 0 &&
-            <button className={styles.link_button}>
-              <i className="material-icons">create</i>
-            </button>
-          }
-        </div>
+        <FooterComponent />
       </div>
     )
   }

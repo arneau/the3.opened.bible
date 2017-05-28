@@ -33,10 +33,11 @@ class VerseComponent extends React.Component {
     let { number } = state.entities.verses[id]
     let { text } = state.entities.verseTranslations[id]
     return (
-      <div className={classes} onClick={() => this.handleClick(id)}>
+      <p className={classes} onClick={() => this.handleClick(id)}>
         <sup className={styles.number}>{number}</sup>
-        <p className={styles.text} dangerouslySetInnerHTML={{__html: text}} />
-      </div>
+        &nbsp;
+        <span className={styles.text} dangerouslySetInnerHTML={{__html: text}} />
+      </p>
     )
   }
 
