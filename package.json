@@ -31,6 +31,7 @@
   },
   "scripts": {
     "build": "webpack -p",
-    "dev": "webpack-dev-server --host 192.168.1.105"
+    "dev-lan": "webpack-dev-server --host 0.0.0.0",
+    "dev-local": "webpack-dev-server"
   }
 }

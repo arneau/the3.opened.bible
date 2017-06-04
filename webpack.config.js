@@ -26,6 +26,7 @@ var config = {
   },
   devServer: {
     contentBase: path.resolve('./server'),
+    disableHostCheck: true,
     historyApiFallback: true
   }
 }

@@ -1,0 +1,15 @@
+@import '../../../styles/config';
+@import '../../../styles/extends';
+
+:local {
+
+	.container {
+		margin-top: 4rem;
+		padding: 1rem;
+
+		&.raised {
+			margin-bottom: 4rem;
+		}
+	}
+
+}

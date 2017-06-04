@@ -51,9 +51,7 @@ class HeaderComponent extends React.Component {
     ])
     return (
       <header className={classes}>
-        <div className={styles.reference}>
-          <input onKeyUp={this.handleKeyUp} ref="input" type="text" />
-        </div>
+        <input onKeyUp={this.handleKeyUp} ref="input" type="text" />
       </header>
     )
   }

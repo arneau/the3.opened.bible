@@ -4,6 +4,8 @@
 :local {
 
 	.container {
+		font-family: Lato, Helvetica, sans-serif;
+		font-size: 1.1rem;
 		padding: 1rem;
 		width: 100%;
 
@@ -35,11 +37,9 @@
 
 		.number {
 			color: rgba(0, 0, 0, 0.38);
-			font-family: Georgia, serif;
 		}
 		.text {
 			color: rgba(0, 0, 0, 0.87);
-			font-family: Georgia, serif;
 
 			q {
 				color: $red;
